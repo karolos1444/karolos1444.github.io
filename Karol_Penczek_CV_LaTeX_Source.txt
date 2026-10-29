@@ -1,0 +1,190 @@
+\documentclass[a4paper]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.530in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.45in}
+\addtolength{\textheight}{1in}
+
+\urlstyle{rm}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeItemWithoutTitle}[1]{
+  \item\small{
+    {\vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{#3} & \textit{#4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+%-----------------------------
+%%%%%%  CV STARTS HERE  %%%%%%
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\LARGE Karol Dawid Penczek}
+    & \faEnvelope~\href{mailto:karolpenczek@gmail.com}{karolpenczek@gmail.com} \\
+  & \faPhone*~+31 6 1723 6227 \\
+  \multicolumn{2}{l}{
+    \faGithub~\href{https://github.com/karolos1444}{github.com/karolos1444} \hspace{1.5em}
+    \faLinkedin~\href{https://www.linkedin.com/in/karol-penczek}{linkedin.com/in/karol-penczek}
+  }\\
+\end{tabular*}
+
+%-----------SUMMARY-----------------
+\vspace{2pt}
+\small{MSc Data Science and AI student at TU Delft and Cum Laude Computer Science graduate (TU/e), with experience building software end-to-end across REST APIs, React interfaces, Docker deployment, and resource-constrained embedded systems. Seeking a software engineering internship.}
+\vspace{-2pt}
+
+%-----------SKILLS-----------------
+\section{~~Technical Skills}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Engineering}
+      {Python, C/C++, JavaScript, Docker, Git, REST APIs, React.js, embedded systems (FreeRTOS)}
+    \resumeSubItem{Data}
+      {SQL, data pipelines, embedding-based retrieval and similarity scoring}
+    \resumeSubItem{Machine Learning \& AI}
+      {PyTorch, PyTorch Geometric, TensorFlow, CNNs, GNNs, model evaluation \& robustness testing, fine-tuning (LoRA), sparse autoencoders}
+    \resumeSubItem{Languages}
+      {English (C1), Polish (native), German (B2/C1)}
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------------
+\vspace{-5pt}
+\section{Experience}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {PeerCode (Industry Partner) --- Facial Recognition Service}{Eindhoven, Netherlands}
+      {Machine Learning / Software Engineer (six-month university--industry project team)}{September 2025 -- January 2026}
+    \resumeItemListStart
+      \resumeItem{End-to-end delivery}{Built a facial recognition service for an industry partner, processing both images and short video clips for face detection, identification, and verification.}
+      \resumeItem{Deployment}{Containerised the inference backend with Docker and exposed REST APIs, served through a React web interface.}
+      \resumeItem{Data \& privacy}{Assembled a GDPR-compliant synthetic identity gallery and implemented the input pipeline (face localisation, alignment, normalisation) before inference.}
+      \resumeItem{Evaluation}{Systematically evaluated a deep face-matching model across lighting, pose, resolution, and multi-person scenarios.}
+      \resumeItem{Security}{Designed verification and audit logging based on image hashing and embedding similarity scores for controlled, secure system usage.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Aster in Space --- Student Team}{Eindhoven, Netherlands}
+      {Software Engineer}{September 2024 -- December 2025}
+    \resumeItemListStart
+      \resumeItem{AetherSense payload --- live in space}{Built reliable, maintainable flight software over 16 months in a multidisciplinary team. Implemented communication, data processing, sensor scanning, and attitude determination under strict compute, power, and memory constraints, with code designed for continued team development.}
+      \resumeItem{Design \& requirements}{Compared microcontroller options and software environments, and defined system- and software-level requirements together with mechanical, electronics, and systems engineers.}
+      \resumeItem{CubeSat project}{Selected the software environment and hardware for a 10\,cm $\times$ 10\,cm $\times$ 30\,cm satellite and implemented software against requirements agreed across subteams.}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+      {ML Collective \& EleutherAI}{Remote}
+      {Member of independent ML research organisations}{October 2024 -- Present}
+    \resumeItemListStart
+      \resumeItem{Dragonfly project (Oct -- Dec 2025)}{Collaborated with an international research team (Imperial College London, UT Austin) on robustness of audio ML models, working in CLAP and AudioLDM latent spaces while preserving perceptual audio quality.}
+      \resumeItem{Experimentation}{Selected datasets, model architectures, and evaluation setups from the academic literature; fine-tuned and evaluated the LoRAW model on the MTG-Jamendo dataset.}
+      \resumeItem{Open source}{Contributed to the public project repository: \href{https://github.com/damanimc/Dragonfly}{github.com/damanimc/Dragonfly}}
+    \resumeItemListEnd
+    
+    \resumeSubheading
+      {Software Design Course (2IRR00), TU Eindhoven}{Eindhoven, Netherlands}
+      {Teaching Assistant}{April 2025 -- June 2025, reappointed April 2026 -- June 2026}
+    \resumeItemListStart
+      \item\small{Selected after finishing the course with a top grade; supported 400+ students as primary contact for a $\sim$60-student tutorial group, led project supervision and Q\&A sessions, and graded midterm exams.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
+\vspace{-5pt}
+\section{Selected Projects}
+\resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Spatio-temporal Pedestrian Flow Prediction (GNN)}{Eindhoven, Netherlands}
+      {Team project --- individually owned the GNN model}{April 2025 -- June 2025}
+    \resumeItemListStart
+      \resumeItem{Model}{Designed and implemented a spatio-temporal Graph Neural Network (PyTorch Geometric, GCN-based) predicting pedestrian flows in a busy train station environment.}
+      \resumeItem{Pipeline}{Built the data transformation pipeline converting raw trajectory coordinates into time-indexed dynamic graphs (node features, edge indices, rolling prediction windows), with sequence DataLoaders and an autoregressive rollout for multi-step forecasting.}
+      \resumeItem{Evaluation}{Added evaluation and visualisation utilities comparing predicted vs.\ ground-truth trajectories. Repository: \href{https://github.com/karolos1444/FlowGroup1}{github.com/karolos1444/FlowGroup1}}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Bachelor Thesis: Interpretable CNN Concept Learning via SAEs}{Eindhoven, Netherlands}
+      {TU Eindhoven}{February 2026 -- June 2026}
+    \resumeItemListStart
+      \item\small{Developed a sparse-autoencoder pipeline on fine-tuned ResNet-18 representations (DeepFashion, APT-36K datasets) to study whether internal visual features decompose into interpretable concepts --- relevant to model debugging and responsible AI.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\vspace{-5pt}
+\section{~~Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Delft University of Technology}{Delft, Netherlands}
+      {MSc Data Science and Artificial Intelligence Technology}{September 2026 -- Present (expected 2028)}
+    \resumeSubheading
+      {\href{https://bluedot.org/courses/technical-ai-safety}{BlueDot Impact --- Technical AI Safety Course}}{Remote}
+      {Participant, cohort-based course}{October 2026 -- December 2026}
+    \resumeItemListStart
+      \item\small{Studying alignment and RLHF, mechanistic interpretability, evaluations and red-teaming, AI control, and scalable oversight through technical readings, written analysis, and expert-facilitated discussions.}
+    \resumeItemListEnd
+    \resumeSubheading
+      {Eindhoven University of Technology}{Eindhoven, Netherlands}
+      {BSc Computer Science and Engineering; Cum Laude}{September 2023 -- August 2026}
+  \resumeSubHeadingListEnd
+
+
+\end{document}

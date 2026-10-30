@@ -64,7 +64,7 @@ html {
 
 body {
   min-height: 100dvh;
-  background: var(--surface);
+  background: var(--p-teal);
   color: var(--text);
   font-family: var(--body-font);
   font-size: 16px;
@@ -114,6 +114,7 @@ h3 {
   margin: 0;
   gap: 0;
   padding: 0;
+  background: var(--surface);
 }
 
 .skip-link {
@@ -201,9 +202,15 @@ h3 {
 
 .content {
   width: 100%;
-  max-width: 780px;
+  max-width: 900px;
   min-width: 0;
   padding: 32px 24px 40px;
+  background: var(--surface);
+}
+
+.color-rail {
+  display: none;
+  background: var(--p-teal);
 }
 
 .link-icon {
@@ -234,18 +241,39 @@ h3 {
   background: var(--accent);
 }
 
+.about-layout {
+  display: grid;
+  gap: 28px;
+}
+
+.about-intro {
+  min-width: 0;
+}
+
 .about-lead {
   max-width: 25ch;
   font-family: var(--display-font);
+  text-align: left;
   font-size: clamp(2rem, 8vw, 2.65rem);
   letter-spacing: -0.025em;
   line-height: 1.12;
+}
+
+.wave-icon {
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.12em;
+  object-fit: contain;
+  image-rendering: pixelated;
+  vertical-align: -0.06em;
 }
 
 .about-copy {
   max-width: 63ch;
   margin-top: 24px;
   color: var(--text-secondary);
+  text-align: justify;
   font-size: 15px;
   line-height: 1.75;
 }
@@ -253,12 +281,11 @@ h3 {
 .education {
   display: grid;
   gap: 16px;
-  margin-top: 28px;
 }
 
 .education p {
-  padding: 12px;
-  border-top: 2px solid var(--p-sage);
+  padding: 12px 14px;
+  border-left: 2px solid var(--p-sage);
   background: color-mix(in oklch, var(--p-sage) 16%, var(--surface));
   font-size: 12px;
   line-height: 1.6;
@@ -389,9 +416,10 @@ h3 {
 
 @media (min-width: 800px) {
   .page {
-    grid-template-columns: minmax(160px, 16%) minmax(0, 1fr);
+    grid-template-columns: minmax(140px, 1fr) minmax(0, 900px) minmax(140px, 1fr);
     gap: 0;
     padding: 0;
+    background: var(--p-teal);
   }
 
   .profile {
@@ -401,7 +429,12 @@ h3 {
   }
 
   .content {
+    justify-self: center;
     padding: 56px 40px 48px;
+  }
+
+  .color-rail {
+    display: block;
   }
 
   .identity {
@@ -426,6 +459,36 @@ h3 {
 
   .project {
     padding-block: 26px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-layout {
+    grid-template-columns: minmax(0, 1.5fr) minmax(200px, 1fr);
+    column-gap: 32px;
+    row-gap: 24px;
+    align-items: start;
+  }
+
+  .about-intro {
+    display: contents;
+  }
+
+  .about-lead {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .about-copy {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 0;
+  }
+
+  .education {
+    grid-column: 2;
+    grid-row: 2;
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
